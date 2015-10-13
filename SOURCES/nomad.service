@@ -1,0 +1,16 @@
+[Unit]
+Description=A Distributed, Highly Available, Datacenter-Aware Scheduler
+Documentation=https://www.nomadproject.io/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=nomad
+Group=nomad
+EnvironmentFile=-/etc/sysconfig/nomad
+ExecStart=/usr/bin/nomad $CMD_OPTS
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
