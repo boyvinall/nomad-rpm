@@ -51,7 +51,7 @@ One RPM for the Nomad binary.
 # Run
 
 * Install the RPM.
-* Put config files in `/etc/nomad/`.
+* change config files in `/etc/nomad/` or put your config file.
 * Start the service and tail the logs `systemctl start nomad.service` and `journalctl -f`.
   * To enable at reboot `systemctl enable nomad.service`.
 
