@@ -73,8 +73,8 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Tue Oct 13 2015 Matt <matt.vinall@imgtec.com>
-* initial version
-
 * Wed Feb 05 2019 KelnMaari <zu_krein@protonmail.com>
 * Update spec to version 0.8.7
+
+* Tue Oct 13 2015 Matt <matt.vinall@imgtec.com>
+* initial version
