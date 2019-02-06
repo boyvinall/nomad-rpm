@@ -1,12 +1,12 @@
 Name:           nomad
-Version:        0.1.2
+Version:        0.8.7
 Release:        2%{?dist}
 Summary:        A Distributed, Highly Available, Datacenter-Aware Scheduler
 
 Group:          System Environment/Daemons
 License:        MPLv2.0
 URL:            https://www.nomadproject.io/
-Source0:        https://dl.bintray.com/mitchellh/%{name}/%{name}_%{version}_linux_amd64.zip
+Source0:        https://releases.hashicorp.com/%{name}/%{version}/%{name}_%{version}_linux_amd64.zip
 Source1:        %{name}.service
 Source2:        %{name}.sysconfig
 Source3:        %{name}.json
@@ -26,7 +26,7 @@ A Distributed, Highly Available, Datacenter-Aware Scheduler
 mkdir -p %{buildroot}/%{_bindir}
 cp nomad %{buildroot}/%{_bindir}
 mkdir -p %{buildroot}/%{_sysconfdir}/%{name}
-cp %{SOURCE3} %{buildroot}/%{_sysconfdir}/%{name}/server.json-dist
+cp %{SOURCE3} %{buildroot}/%{_sysconfdir}/%{name}/nomad.json.template
 mkdir -p %{buildroot}/%{_sysconfdir}/sysconfig
 mkdir -p %{buildroot}/%{_sharedstatedir}/%{name}
 cp %{SOURCE2} %{buildroot}/%{_sysconfdir}/sysconfig/%{name}
@@ -66,12 +66,15 @@ rm -rf %{buildroot}
 %{_unitdir}/%{name}.service
 %endif
 %attr(755, root, root) %{_bindir}/%{name}
-%attr(755, root, root) %{_sysconfdir}/%{name}/server.json-dist
+%attr(755, root, root) %{_sysconfdir}/%{name}/nomad.json.template
 %attr(755, root, root) %{_sysconfdir}/sysconfig/%{name}
 
 %doc
 
 
 %changelog
+* Wed Feb 05 2019 KelnMaari <zu_krein@protonmail.com>
+* Update spec to version 0.8.7
+
 * Tue Oct 13 2015 Matt <matt.vinall@imgtec.com>
 * initial version
