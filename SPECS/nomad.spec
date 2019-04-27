@@ -1,6 +1,6 @@
 Name:           nomad
-Version:        0.8.7
-Release:        2%{?dist}
+Version:        0.9.0
+Release:        1%{?dist}
 Summary:        A Distributed, Highly Available, Datacenter-Aware Scheduler
 
 Group:          System Environment/Daemons
